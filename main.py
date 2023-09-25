@@ -38,29 +38,29 @@ def say_answers(prefix, suffix, question_i, answers_i):
 
 
 print(
-    "Hi, I'm here to tell you about jahangirnagar university. \
-                what do you want to know about jahangirnagar university?"
+    "Olá, estou aqui para conversar sobre a UFC de Itapajé. \
+                O que deseja saber?"
 )
 flg = True
 while flg:
     # Q/A
     print("\n\n")
-    asked_question = str(input("what is in your mind: ")).lower()
+    asked_question = str(input("O que deseja saber? ")).lower()
 
     if (
-        "name of the university" in asked_question
-        or "university name" in asked_question
+        "nome da universidade" in asked_question
+        or "nome" in asked_question
     ):
         # Q: what is the name of the university?
         question = "UniversityName"
         query = "name(" + question + ")."
         answers = ask_question(query)
-        say_answers("The name of the university ", "", question, answers)
+        say_answers("O nome da universidade é ", "", question, answers)
 
     elif (
-        "introduction" in asked_question
-        or "about ju" in asked_question
-        or "about jahangirnagar university" in asked_question
+        "introdução" in asked_question
+        or "sobre a universidade" in asked_question
+        or "sobre a UFC" in asked_question
     ):
         # Q: what is jahangirnagar university?
         question = "Introduction"
@@ -69,17 +69,17 @@ while flg:
         say_answers("", "", question, answers)
 
     elif (
-        "history of ju" in asked_question
-        or "history of jahangirnagar university" in asked_question
+        "história da UFC" in asked_question
+        or "história da Universidade" in asked_question
     ):
         # Q: history of jahangirnagar university.
         question = "History"
         query = "history('jahangirnagar university', " + question + ")."
         answers = ask_question(query)
-        say_answers("Brief history: ", "", question, answers)
+        say_answers("Breve história: ", "", question, answers)
 
     elif (
-        "location of jahangirnagar university" in asked_question
+        "onde é a universidade" in asked_question
         or "situated" in asked_question
     ):
         # Q: where is jahangirnagar university?
@@ -88,26 +88,26 @@ while flg:
         answers = ask_question(query)
         say_answers("", "", question, answers)
 
-    elif "area of jahangirnagar university" in asked_question:
+    elif "área da universidade" in asked_question:
         # Q: where is jahangirnagar university?
         question = "Area"
         query = "area('jahangirnagar university', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "total area of jahangirnagar university is about ", "", question, answers
+            "a área da UFC é aproximadamente ", "", question, answers
         )
 
     elif (
-        "current" in asked_question
-        or "present" in asked_question
-        or "now" in asked_question
-    ) and ("vice chancellor" in asked_question or "vc" in asked_question):
+        "atual" in asked_question
+        or "agora" in asked_question
+        or "hoje" in asked_question
+    ) and ("vice coordenador" in asked_question or "vc" in asked_question):
         # Q: who is the current vice_chancellor of jahangirnagar university?
         question = "Vice_chancellor"
         query = "vice_chancellor('jahangirnagar university', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "The current vice chancellor of jahangirnagar university is ",
+            "O atual vice coordenador do campus é ",
             "",
             question,
             answers,
@@ -151,15 +151,15 @@ while flg:
         )
 
     elif (
-        "names of the faculties" in asked_question
-        or "what are the faculties" in asked_question
+        "quais cursos" in asked_question
+        or "quais são os cursos" in asked_question
     ):
         # Q what are the faculties in jahangirnagar university
         question = "Facultiy"
         query = "faculties('jahangirnagar university', " + question + ")."
         answers = ask_question(query)
         say_answers(
-            "there are 6 faculties are in jahangirnagar university, they are, ",
+            "Existem três cursos na UFC de Itapajé, sendo eles ",
             "",
             question,
             answers,
@@ -171,12 +171,9 @@ while flg:
     ) and "under the faculty of" in asked_question:
         # Q what are the names departments in faculty of X?
         faculties = [
-            "faculty of mathematical and physical science",
-            "faculty of biological science",
-            "faculty of social science",
-            "faculty of arts and humanities",
-            "faculty of business studies",
-            "faculty of law",
+            "Análise e Desenvolvimento de Sistemas",
+            "Ciência de Dados",
+            "Segurança da Informação",
         ]
         id = -1
         for i in range(6):
@@ -198,91 +195,18 @@ while flg:
             say_answers("", "", question, answers)
 
         else:
-            print(">>>>> ", "sorry, there is no such faculty.")
-
-    elif (
-        "names of the departments" in asked_question
-        or "what are the departments" in asked_question
-    ):
-        # Q what are the departments in jahangirnagar university
-        question = "Departments"
-        query = "departments('jahangirnagar university', " + question + ")."
-        answers = ask_question(query)
-        say_answers(
-            "there are 34 departments in jahangirnagar university, they are, ",
-            "",
-            question,
-            answers,
-        )
-
-    elif (
-        "about department of cse" in asked_question
-        or "about cse" in asked_question
-        or "about computer science and engineering" in asked_question
-        or "about department of computer science and engineering" in asked_question
-    ):
-        # Q what you know about dept of CSE jahangirnagar university
-        question = "Cse"
-        query = (
-            "about_department_of_computer_science_and_engineering(\
-                'jahangirnagar university', "
-            + question
-            + ")."
-        )
-        answers = ask_question(query)
-        say_answers("", "", question, answers)
-
-    elif (
-        "chairman of department of cse" in asked_question
-        or "chairman of cse" in asked_question
-        or "chairman of computer science and engineering" in asked_question
-        or "chairman of department of computer science and engineering"
-        in asked_question
-    ):
-        # Q who is the chairman of dept of CSE JU?
-        question = "Chairman"
-        query = (
-            "chairman_of_cse('department of computer science and engineering', "
-            + question
-            + ")."
-        )
-        answers = ask_question(query)
-        say_answers(
-            "",
-            "is the chairman of department of computer science and engineering",
-            question,
-            answers,
-        )
-
-    elif (
-        "who are the developers of this project" in asked_question
-        or "who developed" in asked_question
-        or "who created" in asked_question
-    ):
-        # Q who developed this program?
-        question = "Developers"
-        query = "developers(" + question + ")."
-        answers = ask_question(query)
-        print(
-            ">>>>> ",
-            "This project is supervised by professor doctor mohammad shorif uddin.",
-        )
-        say_answers("the developers are", "", question, answers)
-
-    elif "stop" in asked_question or "exit" in asked_question:
-        print(">>>>> ", "thank you, hope you have enjoyed the session")
-        break
+            print(">>>>> ", "me desculpe, não temos este curso no campus.")
 
     else:
         if asked_question != "-----------------":
             confirmation = str(
                 input(
-                    "Sorry, this is out of my knowledge. whould you like to continue? "
+                    "Desculpe, isso não está no meu conhecimento. Posso ajudar em algo mais? "
                 )
             ).lower()
             
             if "no" in confirmation or "nope" in confirmation or "stop" in confirmation:
-                print(">>>>> ", "thank you, hope you have enjoyed the session")
+                print(">>>>> ", "obrigado, espero que tenha sido proveitoso.")
                 break
             else:
                 continue

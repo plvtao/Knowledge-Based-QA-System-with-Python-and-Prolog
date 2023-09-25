@@ -13,8 +13,6 @@ faculty('Segurança da Informação').
 
 faculties('Análise e Desenvolvimento de Sistemas, Ciência de Dados e Segurança da Informação').
 
-departments('department of computer science and engineering, department of mathematics, department of physics, department of environmental science, department of chemistry, department of statistics, department of geological science, department of botany, department of zoology, department of biochemistry and molecular biology, department of microbiology, department of pharmacy, department of public health and informatics, department of biotechnology and genetic engineering, department of anthropology, department of economics, department of government and politics,\n\tdepartment of geography and environment, department of public administration, department of urban and regional planning, department of archaeology, department of bangla, department of drama and dramatics, department of english, department of fine arts, department of history, department of international relations, department of journalism and media studies, department of philosophy, department of accounting and information systems, department of finance and banking, department of marketing, department of management studies, department of accounting and information systems, department of finance and banking, department of marketing, department of management studies').
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 introduction(X, Y) :-
     name(X),
